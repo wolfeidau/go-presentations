@@ -1,0 +1,104 @@
+Intro to Testing in Go
+
+Mark Wolfe
+CTO at Ninja Blocks
+@wolfeidau
+http://wolfe.id.au
+
+* Before we start
+
+We are here to talk about testing in Go
+
+- Start Simple
+- Leave your previous language at the door
+- When in Rome..
+
+* Why test?
+
+- Scratch pad for ideas
+- Test our assumptions
+- Leave something for future 
+
+* What do we want from test code?
+
+- Self contained
+- Easily reproducible
+- Simple
+
+* How do we make a test?
+
+user.go
+
+.code -numbers user.go
+
+user_test.go
+
+.code -numbers user_test.go
+
+* Simple Test
+
+.code -numbers simple_test.go
+
+* Table Test
+
+.code -numbers table_test.go /START1/,/STOP1/
+
+* Testing With Interfaces (1/2)
+
+.code -numbers message.go /START1/,/STOP1/
+
+* Testing With Interfaces (1/2)
+
+.code -numbers message_test.go /START1/,/STOP1/
+
+* Time Test
+
+.code -numbers time_test.go /START1/,/STOP1/
+
+* The tools
+
+Retrieves dependencies used in the tests.
+
+	go get -t ./...
+
+Runs tests in the current directory and all sub directories.
+
+	go test -v ./..
+
+Generates a coverage report.
+
+	go test -cover  ./...
+
+Runs benchmarks in the current tree.
+
+	go test -bench -v ./...
+
+* What test packages are out there?
+
+- testing http://golang.org/pkg/testing/
+- gocheck http://labix.org/gocheck
+- ginkgo http://onsi.github.io/ginkgo/
+
+* gocheck
+
+.code -numbers gocheck_test.go
+
+* Why gocheck?
+
+- Better assertions for a classic feel.
+- Fixtures.
+- Setup and Teardown.
+- Nicer output when things go wrong.
+
+* Why ginkgo?
+
+- I honestly don't know?
+- I am keen to hear from people who use it.
+- Looks great if your building a big complex thing and you want to feel at home.
+
+* tips
+
+- Tests aren't built when your code is built..
+- Start simple and stay simple.
+- Use interfaces all the time
+
