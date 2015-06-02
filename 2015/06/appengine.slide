@@ -1,0 +1,50 @@
+Overview of Google App Engine
+
+Mark Wolfe
+
+@wolfeidau
+http://wolfe.id.au
+
+* What is Google App Engine
+
+- Platform as a service
+- Build on ideas google uses internally
+- Lean on PaaS to get started
+
+* So what happens when I want to break out?
+
+- Managed VMs, new product which leans more on compute service
+- Google Container Engine, powered by Kubernetes
+- Google Compute Service
+
+* Things you can really lean on
+
+- Bigquery, tons of data, SQL interface
+- PubSub Service, similar to SQS but more flexible
+- Datastore, distributed document store
+
+* Datastore
+
+- Scalable
+- Schemaless
+- Eventually Consistent
+- Scalable
+- NOT SQL
+
+* Bigquery
+
+- LOTS of data
+- Pay per query based on how much data is processed
+
+* Some Code?
+
+- https://github.com/GoogleChrome/ioweb2015/tree/master/backend
+- https://github.com/golang/build/tree/master/app
+- https://github.com/golang/appengine
+
+* Tips
+
+- Use contexts everywhere, even in non App Engine code
+- Build two apps, one standalone, one in App Engine
+- Test all your common code
+- Integration test the App Engine specific code
